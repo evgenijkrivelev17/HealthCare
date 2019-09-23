@@ -23,17 +23,17 @@ class ViewController: UIViewController {
         
         mainPictures = UIImageView(image: UIImage(named: "main_logo"))
         
-        titleView = AppGradientTextView()
+        self.titleView = AppGradientTextView()
         self.view.addSubview(titleView)
         
-        logInPanelView = AppLogInPanelView()
+        self.logInPanelView = AppLogInPanelView()
         self.view.addSubview(logInPanelView)
         
         setUpFileds()
     }
     
     func setUpFileds(){
-        self.view.backgroundColor = UIColor.init(red: 70/255, green: 202/255, blue: 212/255, alpha: 255/255)
+        self.view.backgroundColor = UIColor.white
         self.createTitleView()
         self.createLoginPanelView()
     }
@@ -44,24 +44,26 @@ class ViewController: UIViewController {
         self.logInPanelView.topAnchor.constraint(equalTo: self.titleView.bottomAnchor, constant: 50).isActive = true
         self.logInPanelView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -70).isActive = true
         self.logInPanelView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 70).isActive = true
-        self.logInPanelView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        self.logInPanelView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.4).isActive = true
         
         self.logInPanelView.logInButton.setTitle("Log In", for: .normal)
-        self.logInPanelView.logInButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 35)
-        self.logInPanelView.logInButton.backgroundColor = UIColor.init(red: 78/255, green: 78/255, blue: 78/255, alpha: 0.5)
+        self.logInPanelView.logInButton.titleLabel?.font = UIFont(name: "Palatino-Bold", size: 30)
+        self.logInPanelView.logInButton.backgroundColor = UIColor.black
         self.logInPanelView.logInButton.setTitleColor(UIColor.white, for: .normal)
 
-        self.logInPanelView.logInField.backgroundColor = UIColor.init(red: 78/255, green: 78/255, blue: 78/255, alpha: 0.5)
+        self.logInPanelView.logInField.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.logInPanelView.logInField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.logInPanelView.logInField.placeholder = "User name or email"
-
-        self.logInPanelView.passwordField.backgroundColor = UIColor.init(red: 78/255, green: 78/255, blue: 78/255, alpha: 0.5)
+        self.logInPanelView.logInField.textColor = UIColor.black
+        self.logInPanelView.logInField.layer.borderWidth = 2
+        self.logInPanelView.passwordField.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.logInPanelView.passwordField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.logInPanelView.passwordField.placeholder = "Enter password"
-
-        self.logInPanelView.sigInButton.setTitle("Sign In", for: UIControl.State.normal)
-        self.logInPanelView.sigInButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 35)
-        self.logInPanelView.sigInButton.backgroundColor = UIColor.init(red: 78/255, green: 78/255, blue: 78/255, alpha: 0.5)
+        self.logInPanelView.passwordField.layer.borderWidth = 2
+        
+        self.logInPanelView.sigInButton.setTitle("Sign In", for: .normal)
+        self.logInPanelView.sigInButton.titleLabel?.font = UIFont(name: "Palatino-Bold", size: 30)
+        self.logInPanelView.sigInButton.backgroundColor = UIColor.black
         self.logInPanelView.sigInButton.setTitleColor(UIColor.white, for: .normal)
     }
    
@@ -70,19 +72,17 @@ class ViewController: UIViewController {
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.contentScaleFactor = UIScreen.main.scale
         titleView.SetText("HealthCare")
-        titleView.SetFont(UIFont.systemFont(ofSize: 70, weight: .bold))
-        titleView.SetFontSize(55)
-        let lightgray = UIColor(red:0/255, green: 0/255, blue:0/255, alpha:0.3)
-        let white = UIColor.white
-        titleView.SetColors([lightgray.cgColor, white.cgColor, lightgray.cgColor])
+        let blackColor = UIColor.black
+        let lightGray = UIColor.lightGray
+        titleView.SetColors([lightGray.cgColor, blackColor.cgColor, lightGray.cgColor])
         titleView.SetLocationsGradient([0, 0.75, 1.0])
         titleView.SetStartPosition(CGPoint(x:0.0, y:0.0))
-        titleView.SetEndPosition(CGPoint(x:1.0, y:1.0))
+        titleView.SetEndPosition(CGPoint(x:1.0, y:0.0))
         titleView.translatesAutoresizingMaskIntoConstraints = false
-        titleView.topAnchor.constraint(equalTo: view.topAnchor, constant:self.view.bounds.height * 0.2).isActive = true
+        titleView.topAnchor.constraint(equalTo: view.topAnchor, constant:self.view.bounds.height * 0.1).isActive = true
         titleView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: self.view.bounds.width * 0.1).isActive = true
         titleView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -self.view.bounds.width * 0.1).isActive = true
-        titleView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1).isActive = true
+        titleView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15).isActive = true
         
         let gradientAnimation = CABasicAnimation(keyPath: "locations")
         gradientAnimation.fromValue = [0.0, 0.0, 0.25]
@@ -92,15 +92,7 @@ class ViewController: UIViewController {
         titleView.add(gradientAnimation)
     }
     
-    func createMainPictures(){
-        mainPictures.contentMode = .scaleAspectFill
-        mainPictures.contentScaleFactor = UIScreen.main.scale
-        mainPictures.translatesAutoresizingMaskIntoConstraints = false
-        mainPictures.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
-        mainPictures.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive  = true
-        mainPictures.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        mainPictures.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
-    }
+   
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

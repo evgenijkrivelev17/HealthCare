@@ -31,9 +31,12 @@ class AppGradientTextView:UIView, UITextFieldDelegate {
         self.textLayer.alignmentMode = .center
         self.textLayer.contentsScale = UIScreen.main.scale
         self.textLayer.isWrapped = true
+        self.textLayer.font = UIFont(name: "Chalkduster", size: 120)
+        self.textLayer.alignmentMode = .center
         self.gradientLayer.mask = self.textLayer
         self.gradientLayer.contentsScale = UIScreen.main.scale
         self.layer.addSublayer(gradientLayer)
+        self.layoutIfNeeded()
     }
     
     private func updateFrameGradients(){

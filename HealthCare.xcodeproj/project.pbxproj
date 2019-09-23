@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E0BDABA2328CF08008B423D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BDAB92328CF08008B423D /* UIButtonExtension.swift */; };
 		3E0BDABC2328D063008B423D /* AppGradientTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BDABB2328D063008B423D /* AppGradientTextView.swift */; };
+		3E21C97A2338F5710006F8D6 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E21C97C2338F5710006F8D6 /* Localization.strings */; };
 		3E3F2837232FA8BE00C28C68 /* AppRadiusButtonVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */; };
 		3E43023C23290D90008CF157 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43023B23290D90008CF157 /* ViewController.swift */; };
 		3E49F33622C523B8008BD089 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49F33522C523B8008BD089 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		3E0BDAB92328CF08008B423D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		3E0BDABB2328D063008B423D /* AppGradientTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGradientTextView.swift; sourceTree = "<group>"; };
+		3E21C97B2338F5710006F8D6 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRadiusButtonVIew.swift; sourceTree = "<group>"; };
 		3E43023B23290D90008CF157 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E49F33222C523B8008BD089 /* HealthCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 		3E49F32922C523B8008BD089 = {
 			isa = PBXGroup;
 			children = (
+				3E21C97C2338F5710006F8D6 /* Localization.strings */,
 				3E49F33422C523B8008BD089 /* HealthCare */,
 				3E49F33322C523B8008BD089 /* Products */,
 			);
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E49F34322C523B8008BD089 /* LaunchScreen.storyboard in Resources */,
+				3E21C97A2338F5710006F8D6 /* Localization.strings in Resources */,
 				3E49F34022C523B8008BD089 /* Assets.xcassets in Resources */,
 				3E49F33B22C523B8008BD089 /* Main.storyboard in Resources */,
 			);
@@ -212,6 +216,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3E21C97C2338F5710006F8D6 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E21C97B2338F5710006F8D6 /* en */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		3E49F33922C523B8008BD089 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

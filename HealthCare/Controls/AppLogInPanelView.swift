@@ -15,10 +15,19 @@ public class AppLogInPanelView : UIView, UITextFieldDelegate {
     var logInField: UITextField!
     var passwordField: UITextField!
     var sigInButton: AppRadiusButtonView!
+    var footerTextVIew: UILabel!
+    var footerButtonView: UILabel!
     
-    private var IsHiddenPanel: Bool = false
+    private var IsHiddenPanel: Bool = true
     
-    private var hiddenHeightFieldsConstraint:[NSLayoutConstraint] = []
+    private var topAnchorLogInConstraint: NSLayoutConstraint!
+    private var heightLogInConstraint: NSLayoutConstraint!
+    
+    private var topAnchorPasswordConstraint: NSLayoutConstraint!
+    private var heightPasswordConstraint: NSLayoutConstraint!
+    
+    private var firstTopAnchorSignInConstraint: NSLayoutConstraint!
+    private var secondTopAnchorSignInConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +46,6 @@ public class AppLogInPanelView : UIView, UITextFieldDelegate {
         
         self.logInField = UITextField()
         self.addSubview(logInField)
-        
         self.passwordField = UITextField()
         self.addSubview(passwordField)
         self.InitializeLogInField()
@@ -45,15 +53,19 @@ public class AppLogInPanelView : UIView, UITextFieldDelegate {
         self.sigInButton = AppRadiusButtonView()
         self.addSubview(sigInButton)
         self.InitializeSigInButton()
-    self.hiddenHeightFieldsConstraint.append(logInField.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2))
-    self.hiddenHeightFieldsConstraint.append(passwordField.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2))
-        
-        for constraint in self.hiddenHeightFieldsConstraint {
-            constraint.isActive = true
-        }
-        
+    
         self.logInField.delegate = self
         self.passwordField.delegate = self
+        
+        self.footerTextVIew = UILabel()
+        self.addSubview(footerTextVIew)
+        self.InitializeFotterTextView()
+        
+        self.footerButtonView = UILabel()
+        self.addSubview(footerButtonView)
+        self.InitializeFotterButtonTextView()
+        
+        self.InitializeConstraints()
     }
     
     
@@ -62,19 +74,19 @@ public class AppLogInPanelView : UIView, UITextFieldDelegate {
         self.logInButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         self.logInButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
         self.logInButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        self.logInButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:0.25).isActive = true
+        self.logInButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:0.2).isActive = true
         self.logInButton.addTarget(self, action: #selector(togglePanel), for: .touchUpInside)
     }
     
     func InitializeLogInField(){
         
         self.logInField.keyboardType = .emailAddress
-        self.logInField.textColor = .white
         self.logInField.layer.masksToBounds = true
         self.logInField.layer.cornerRadius = 5
         self.logInField.borderStyle = .roundedRect
         self.logInField.translatesAutoresizingMaskIntoConstraints = false
-        self.logInField.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 20).isActive = true
+        self.topAnchorLogInConstraint = self.logInField.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 20)
+        self.heightLogInConstraint = self.logInField.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0)
         self.logInField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         self.logInField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         
@@ -83,21 +95,55 @@ public class AppLogInPanelView : UIView, UITextFieldDelegate {
         self.passwordField.borderStyle = .roundedRect
         self.passwordField.keyboardType = .default
         self.passwordField.translatesAutoresizingMaskIntoConstraints = false
-        self.passwordField.topAnchor.constraint(equalTo: logInField.bottomAnchor, constant: 20).isActive = true
+        self.topAnchorPasswordConstraint = self.passwordField.topAnchor.constraint(equalTo: logInField.bottomAnchor, constant: 20)
+        self.heightPasswordConstraint = self.passwordField.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0)
         self.passwordField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         self.passwordField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
     }
     
     func InitializeSigInButton(){
         self.sigInButton.translatesAutoresizingMaskIntoConstraints = false
-        self.sigInButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 20).isActive = true
+        self.firstTopAnchorSignInConstraint = self.sigInButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 20)
+        self.secondTopAnchorSignInConstraint = self.sigInButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 20)
+        self.sigInButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:0.2).isActive = true
         self.sigInButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
         self.sigInButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        self.sigInButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:0.25).isActive = true
+    }
+    
+    func InitializeFotterTextView(){
+        self.footerTextVIew.contentMode = .top
+        self.footerTextVIew.translatesAutoresizingMaskIntoConstraints = false
+        self.footerTextVIew.topAnchor.constraint(equalTo: self.sigInButton.bottomAnchor, constant: 15).isActive = true
+        self.footerTextVIew.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+        self.footerTextVIew.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -70).isActive = true
+        self.footerTextVIew.frame =  CGRect(x: 0,y: 0, width: self.footerTextVIew.bounds.width, height: 20)
+        self.footerTextVIew.text = "Forgot password?"
+        self.footerTextVIew.font = UIFont(name: "Palatino-Bold", size: 15)
+        self.footerTextVIew.textColor = UIColor.gray
+    }
+    
+    func InitializeFotterButtonTextView(){
+        self.footerButtonView.contentMode = .top
+        self.footerButtonView.translatesAutoresizingMaskIntoConstraints = false
+        self.footerButtonView.topAnchor.constraint(equalTo: self.sigInButton.bottomAnchor, constant: 15).isActive = true
+        self.footerButtonView.leftAnchor.constraint(equalTo: self.footerTextVIew.rightAnchor, constant: 0).isActive = true
+        self.footerButtonView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        self.footerButtonView.text = "Forgot.."
+        self.footerButtonView.frame =  CGRect(x: 0,y: 0, width: self.footerButtonView.bounds.width, height: 20)
+        self.footerButtonView.font = UIFont(name: "Palatino-Bold", size: 15)
+        self.footerButtonView.textColor = UIColor.black
     }
     
     override public func draw(_ rect: CGRect) {
         super.draw(rect)
+    }
+    
+    private func InitializeConstraints(){
+        self.topAnchorLogInConstraint.isActive = true
+        self.heightLogInConstraint.isActive = true
+        self.topAnchorPasswordConstraint.isActive = true
+        self.heightPasswordConstraint.isActive = true
+        self.firstTopAnchorSignInConstraint.isActive = true
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -114,19 +160,26 @@ public class AppLogInPanelView : UIView, UITextFieldDelegate {
         else{
             ShowPanel()
         }
-        self.layoutIfNeeded()
     }
     
     private func HidePanel(){
-        for constraint in self.hiddenHeightFieldsConstraint {
-            constraint.constant = 0
-        }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.heightLogInConstraint.constant = 0
+            self.heightPasswordConstraint.constant = 0
+            self.firstTopAnchorSignInConstraint.isActive = true
+            self.secondTopAnchorSignInConstraint.isActive = false
+            self.layoutIfNeeded()
+        })
     }
     
     private func ShowPanel(){
-        for constraint in self.hiddenHeightFieldsConstraint {
-            constraint.constant = 0.2
-        }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.heightLogInConstraint.constant = self.frame.height * 0.15
+            self.heightPasswordConstraint.constant = self.frame.height * 0.15
+            self.firstTopAnchorSignInConstraint.isActive = false
+            self.secondTopAnchorSignInConstraint.isActive = true
+            self.layoutIfNeeded()
+        })
     }
 }
 
