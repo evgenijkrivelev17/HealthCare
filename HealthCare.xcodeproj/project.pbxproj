@@ -10,6 +10,11 @@
 		3E0BDABA2328CF08008B423D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BDAB92328CF08008B423D /* UIButtonExtension.swift */; };
 		3E0BDABC2328D063008B423D /* AppGradientTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BDABB2328D063008B423D /* AppGradientTextView.swift */; };
 		3E21C97A2338F5710006F8D6 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E21C97C2338F5710006F8D6 /* Localization.strings */; };
+		3E21C97E233958280006F8D6 /* RegisterAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C97D233958280006F8D6 /* RegisterAccountController.swift */; };
+		3E21C981233AA2CC0006F8D6 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C980233AA2CC0006F8D6 /* LogInViewModel.swift */; };
+		3E21C983233AA3E00006F8D6 /* LogInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C982233AA3E00006F8D6 /* LogInProtocol.swift */; };
+		3E21C989233B5FD50006F8D6 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C988233B5FD50006F8D6 /* TitleTextField.swift */; };
+		3E21C98D233BF8230006F8D6 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C98C233BF8230006F8D6 /* LogInService.swift */; };
 		3E3F2837232FA8BE00C28C68 /* AppRadiusButtonVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */; };
 		3E43023C23290D90008CF157 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43023B23290D90008CF157 /* ViewController.swift */; };
 		3E49F33622C523B8008BD089 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49F33522C523B8008BD089 /* AppDelegate.swift */; };
@@ -26,6 +31,11 @@
 		3E0BDAB92328CF08008B423D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		3E0BDABB2328D063008B423D /* AppGradientTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGradientTextView.swift; sourceTree = "<group>"; };
 		3E21C97B2338F5710006F8D6 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		3E21C97D233958280006F8D6 /* RegisterAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountController.swift; sourceTree = "<group>"; };
+		3E21C980233AA2CC0006F8D6 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		3E21C982233AA3E00006F8D6 /* LogInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInProtocol.swift; sourceTree = "<group>"; };
+		3E21C988233B5FD50006F8D6 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
+		3E21C98C233BF8230006F8D6 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
 		3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRadiusButtonVIew.swift; sourceTree = "<group>"; };
 		3E43023B23290D90008CF157 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E49F33222C523B8008BD089 /* HealthCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +70,53 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3E21C984233AB00F0006F8D6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3E21C980233AA2CC0006F8D6 /* LogInViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3E21C985233AB0260006F8D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E21C982233AA3E00006F8D6 /* LogInProtocol.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E21C986233AB03B0006F8D6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3EE7A73D22CB8CA100721531 /* Models */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3E21C987233ABC6E0006F8D6 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
+		3E21C98A233BF7FE0006F8D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3E21C98B233BF8080006F8D6 /* Classes */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3E21C98B233BF8080006F8D6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3E21C98C233BF8230006F8D6 /* LogInService.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		3E49F32922C523B8008BD089 = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +137,14 @@
 		3E49F33422C523B8008BD089 /* HealthCare */ = {
 			isa = PBXGroup;
 			children = (
+				3E21C98A233BF7FE0006F8D6 /* Services */,
+				3E21C987233ABC6E0006F8D6 /* Animators */,
+				3E21C986233AB03B0006F8D6 /* Classes */,
+				3E21C984233AB00F0006F8D6 /* ViewModels */,
 				3EE7A73F22CB8CB300721531 /* Protocols */,
 				3EE7A73E22CB8CA900721531 /* Controllers */,
-				3EE7A73D22CB8CA100721531 /* Models */,
 				3EE7A73C22CB8C9700721531 /* Controls */,
 				3E49F33522C523B8008BD089 /* AppDelegate.swift */,
-				3E43023B23290D90008CF157 /* ViewController.swift */,
 				3E49F33922C523B8008BD089 /* Main.storyboard */,
 				3E49F33F22C523B8008BD089 /* Assets.xcassets */,
 				3E49F34122C523B8008BD089 /* LaunchScreen.storyboard */,
@@ -102,6 +161,7 @@
 				3EF10FC32322369700485443 /* AppLogInPanelView.swift */,
 				3E0BDABB2328D063008B423D /* AppGradientTextView.swift */,
 				3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */,
+				3E21C988233B5FD50006F8D6 /* TitleTextField.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -117,6 +177,8 @@
 		3EE7A73E22CB8CA900721531 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3E43023B23290D90008CF157 /* ViewController.swift */,
+				3E21C97D233958280006F8D6 /* RegisterAccountController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +186,7 @@
 		3EE7A73F22CB8CB300721531 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				3E21C985233AB0260006F8D6 /* Models */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -202,13 +265,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EFC8A7B232ED5D900364E37 /* HealthCare.xcdatamodeld in Sources */,
+				3E21C983233AA3E00006F8D6 /* LogInProtocol.swift in Sources */,
 				3E43023C23290D90008CF157 /* ViewController.swift in Sources */,
+				3E21C981233AA2CC0006F8D6 /* LogInViewModel.swift in Sources */,
 				3EFC8A78232ED0B500364E37 /* LoginModel.swift in Sources */,
 				3E3F2837232FA8BE00C28C68 /* AppRadiusButtonVIew.swift in Sources */,
 				3E0BDABA2328CF08008B423D /* UIButtonExtension.swift in Sources */,
+				3E21C98D233BF8230006F8D6 /* LogInService.swift in Sources */,
+				3E21C989233B5FD50006F8D6 /* TitleTextField.swift in Sources */,
 				3EFC8A7A232ED51F00364E37 /* UIViewControllerExtension.swift in Sources */,
 				3E0BDABC2328D063008B423D /* AppGradientTextView.swift in Sources */,
 				3E49F33622C523B8008BD089 /* AppDelegate.swift in Sources */,
+				3E21C97E233958280006F8D6 /* RegisterAccountController.swift in Sources */,
 				3EF10FC42322369700485443 /* AppLogInPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

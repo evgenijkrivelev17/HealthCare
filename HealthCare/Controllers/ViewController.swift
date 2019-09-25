@@ -10,18 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var isHiddenFields:Bool = false
-    var TIME_ANIMATION = 0.5
     var titleView:AppGradientTextView!
     var logInPanelView: AppLogInPanelView!
-    var mainPictures: UIImageView!
     
     var hiddenHeightFieldsConstraint:[NSLayoutConstraint] = []
+    @objc dynamic var LogInManager:LogInViewModel!
+    
+    var logInNameOberver: NSKeyValueObservation!
+    var passwordOberver: NSKeyValueObservation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainPictures = UIImageView(image: UIImage(named: "main_logo"))
+        self.LogInManager = LogInViewModel()
+        self.view.backgroundColor = UIColor.white
         
         self.titleView = AppGradientTextView()
         self.view.addSubview(titleView)
@@ -29,11 +30,23 @@ class ViewController: UIViewController {
         self.logInPanelView = AppLogInPanelView()
         self.view.addSubview(logInPanelView)
         
-        setUpFileds()
+        self.setUpFileds()
+        self.setObservation()
+        
+    }
+    
+    func setObservation(){
+        self.logInNameOberver = observe(\ViewController.LogInManager?.model.Login, options:  [.new, .old]) { (vc,change) in
+            guard let newLogIn = change.newValue else { return }
+            self.logInPanelView.logInField.text = newLogIn
+        }
+        self.passwordOberver = observe(\ViewController.LogInManager?.model.Password, options:  [.new, .old]) { (vc,change) in
+            guard let newPassword = change.newValue else {return }
+            self.logInPanelView.passwordField.text = newPassword
+        }
     }
     
     func setUpFileds(){
-        self.view.backgroundColor = UIColor.white
         self.createTitleView()
         self.createLoginPanelView()
     }
@@ -56,15 +69,18 @@ class ViewController: UIViewController {
         self.logInPanelView.logInField.placeholder = "User name or email"
         self.logInPanelView.logInField.textColor = UIColor.black
         self.logInPanelView.logInField.layer.borderWidth = 2
+        self.logInPanelView.logInField.addTarget(self, action: #selector(chagngedLogInField), for: .editingChanged)
         self.logInPanelView.passwordField.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.logInPanelView.passwordField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.logInPanelView.passwordField.placeholder = "Enter password"
         self.logInPanelView.passwordField.layer.borderWidth = 2
+        self.logInPanelView.passwordField.addTarget(self, action: #selector(chagngedPasswordField), for: .editingChanged)
         
         self.logInPanelView.sigInButton.setTitle("Sign In", for: .normal)
         self.logInPanelView.sigInButton.titleLabel?.font = UIFont(name: "Palatino-Bold", size: 30)
         self.logInPanelView.sigInButton.backgroundColor = UIColor.black
         self.logInPanelView.sigInButton.setTitleColor(UIColor.white, for: .normal)
+        self.logInPanelView.sigInButton.addTarget(self, action: #selector(CreateAccount), for: .touchDown)
     }
    
     func createTitleView() {
@@ -92,11 +108,24 @@ class ViewController: UIViewController {
         titleView.add(gradientAnimation)
     }
     
+    @objc func chagngedLogInField() {
+        self.LogInManager!.model.Login = self.logInPanelView.logInField.text ??  ""
+    }
+    
+    @objc func chagngedPasswordField() {
+        self.LogInManager!.model.Password = self.logInPanelView.passwordField.text ?? ""
+    }
    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    
+    @objc func CreateAccount(){
+        let registerController = RegisterAccountController()
+        self.present(registerController, animated: true, completion: nil)
     }
     
 }
