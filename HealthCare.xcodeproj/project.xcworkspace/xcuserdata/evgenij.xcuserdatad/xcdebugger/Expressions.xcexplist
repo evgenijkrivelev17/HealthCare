@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.chagngedLogInField(_:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TitleTextField.InitializeLabel():TitleTextField.swift">
          <PersistentStrings>
             <PersistentString
@@ -10,6 +18,22 @@
             </PersistentString>
             <PersistentString
                value = "self.textField.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TitleTextField.checkPositionPlaceHolder(_:):TitleTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.text.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TitleTextField.InitializeLineLayer():TitleTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.textField.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

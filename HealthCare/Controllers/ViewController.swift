@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var hiddenHeightFieldsConstraint:[NSLayoutConstraint] = []
     @objc dynamic var LogInManager:LogInViewModel!
     
-    var logInNameOberver: NSKeyValueObservation!
+    var LogInModelOberver: NSKeyValueObservation!
     var passwordOberver: NSKeyValueObservation!
     
     override func viewDidLoad() {
@@ -36,13 +36,10 @@ class ViewController: UIViewController {
     }
     
     func setObservation(){
-        self.logInNameOberver = observe(\ViewController.LogInManager?.model.Login, options:  [.new, .old]) { (vc,change) in
-            guard let newLogIn = change.newValue else { return }
-            self.logInPanelView.logInField.text = newLogIn
-        }
-        self.passwordOberver = observe(\ViewController.LogInManager?.model.Password, options:  [.new, .old]) { (vc,change) in
-            guard let newPassword = change.newValue else {return }
-            self.logInPanelView.passwordField.text = newPassword
+        self.LogInModelOberver = observe(\ViewController.LogInManager?.model, options:  [.new, .old]) { (vc,change) in
+            guard let newModel = change.newValue else { return }
+            self.logInPanelView.logInField.text = newModel?.Login
+            self.logInPanelView.passwordField.text = newModel?.Password
         }
     }
     
@@ -70,6 +67,7 @@ class ViewController: UIViewController {
         self.logInPanelView.logInField.textColor = UIColor.black
         self.logInPanelView.logInField.layer.borderWidth = 2
         self.logInPanelView.logInField.addTarget(self, action: #selector(chagngedLogInField), for: .editingChanged)
+        
         self.logInPanelView.passwordField.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.logInPanelView.passwordField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.logInPanelView.passwordField.placeholder = "Enter password"
@@ -108,12 +106,12 @@ class ViewController: UIViewController {
         titleView.add(gradientAnimation)
     }
     
-    @objc func chagngedLogInField() {
-        self.LogInManager!.model.Login = self.logInPanelView.logInField.text ??  ""
+    @objc func chagngedLogInField(_ textField: UITextField) {
+        self.LogInManager!.GetLogInModel().Login = textField.text ??  ""
     }
     
-    @objc func chagngedPasswordField() {
-        self.LogInManager!.model.Password = self.logInPanelView.passwordField.text ?? ""
+    @objc func chagngedPasswordField(_ textField: UITextField) {
+        self.LogInManager!.GetLogInModel().Password = textField.text ?? ""
     }
    
     

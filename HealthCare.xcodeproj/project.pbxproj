@@ -21,6 +21,7 @@
 		3E49F33B22C523B8008BD089 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E49F33922C523B8008BD089 /* Main.storyboard */; };
 		3E49F34022C523B8008BD089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E49F33F22C523B8008BD089 /* Assets.xcassets */; };
 		3E49F34322C523B8008BD089 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E49F34122C523B8008BD089 /* LaunchScreen.storyboard */; };
+		3E4A7D62233E088A008C9339 /* CAVerticalTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A7D61233E088A008C9339 /* CAVerticalTextLayer.swift */; };
 		3EF10FC42322369700485443 /* AppLogInPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF10FC32322369700485443 /* AppLogInPanelView.swift */; };
 		3EFC8A78232ED0B500364E37 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC8A77232ED0B500364E37 /* LoginModel.swift */; };
 		3EFC8A7A232ED51F00364E37 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC8A79232ED51F00364E37 /* UIViewControllerExtension.swift */; };
@@ -45,6 +46,7 @@
 		3E49F33F22C523B8008BD089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E49F34222C523B8008BD089 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E49F34422C523B8008BD089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E4A7D61233E088A008C9339 /* CAVerticalTextLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAVerticalTextLayer.swift; sourceTree = "<group>"; };
 		3EF10FC32322369700485443 /* AppLogInPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogInPanelView.swift; sourceTree = "<group>"; };
 		3EFC8A77232ED0B500364E37 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		3EFC8A79232ED51F00364E37 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				3E0BDABB2328D063008B423D /* AppGradientTextView.swift */,
 				3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */,
 				3E21C988233B5FD50006F8D6 /* TitleTextField.swift */,
+				3E4A7D61233E088A008C9339 /* CAVerticalTextLayer.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				3E21C981233AA2CC0006F8D6 /* LogInViewModel.swift in Sources */,
 				3EFC8A78232ED0B500364E37 /* LoginModel.swift in Sources */,
 				3E3F2837232FA8BE00C28C68 /* AppRadiusButtonVIew.swift in Sources */,
+				3E4A7D62233E088A008C9339 /* CAVerticalTextLayer.swift in Sources */,
 				3E0BDABA2328CF08008B423D /* UIButtonExtension.swift in Sources */,
 				3E21C98D233BF8230006F8D6 /* LogInService.swift in Sources */,
 				3E21C989233B5FD50006F8D6 /* TitleTextField.swift in Sources */,
@@ -362,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -417,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

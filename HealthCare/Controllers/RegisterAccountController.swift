@@ -25,7 +25,6 @@ public class RegisterAccountController: UIViewController {
         self.emailField.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height * 0.05).isActive = true
         self.emailField.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: self.view.frame.width * 0.05).isActive = true
         self.emailField.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -self.view.frame.width * 0.05).isActive = true
-        self.emailField.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        self.emailField.backgroundColor = .red
+        self.emailField.heightAnchor.constraint(equalToConstant: self.view.bounds.height * 0.09).isActive = true
     }
 }
