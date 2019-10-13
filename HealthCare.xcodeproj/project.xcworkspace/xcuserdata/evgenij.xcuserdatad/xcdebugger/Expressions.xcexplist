@@ -3,10 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "TitleTextField.checkPositionPlaceHolder(_:):TitleTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.text.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.chagngedLogInField(_:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TitleTextField.ValidView():TitleTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.shapeLineLayer.fillColor">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,10 +38,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "TitleTextField.checkPositionPlaceHolder(_:):TitleTextField.swift">
+         contextName = "TitleTextField.updateNonValidView(_:):TitleTextField.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.text.count">
+               value = "placeHolderText.fromValue">
+            </PersistentString>
+            <PersistentString
+               value = "self.textLabel.string ?? &quot;&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -34,6 +53,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self.textField.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TitleTextField.SetPlaceHolderText(_:):TitleTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.textLabel.string">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

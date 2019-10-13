@@ -11,14 +11,18 @@ import UIKit
 
 public class AppRadiusButtonView: UIButton {
     
-    var cornerRounded: CGFloat = 0 {
+    private var isSetCornerRadius: Bool = false
+    private var cornerRounded: CGFloat = 0 {
         didSet {
-            refreshCorners(value: cornerRounded)
+            UpdateCorners(value: cornerRounded)
         }
     }
     
-    func refreshCorners(value: CGFloat) {
+    private func UpdateCorners(value: CGFloat) {
         self.layer.cornerRadius = cornerRounded
+        if(self.cornerRounded != 0){
+            self.isSetCornerRadius = true
+        }
     }
     
     public func SetRadius(_ radius:CGFloat){
@@ -31,10 +35,12 @@ public class AppRadiusButtonView: UIButton {
     
     func InitializeSetUp(){
         self.layer.masksToBounds = true
-        self.addTarget(self, action: #selector(touchDownHandle), for: UIControl.Event.touchDown)
-        if self.cornerRounded == 0 {
+        self.addTarget(self, action: #selector(touchHandle), for: UIControl.Event.touchDown)
+        guard isSetCornerRadius else {
             self.layer.cornerRadius = self.frame.height / 2
+            return
         }
+        self.layer.cornerRadius = self.cornerRounded
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,13 +52,13 @@ public class AppRadiusButtonView: UIButton {
         InitializeSetUp()
     }
     
-    @objc func touchDownHandle(_ event:Any){
+    @objc func touchHandle(_ event:Any){
         let minimumScale = CABasicAnimation(keyPath: "transform.scale")
         minimumScale.repeatCount = 1
         minimumScale.duration = 0.2
         minimumScale.toValue = 0.75
         minimumScale.autoreverses = true
-        self.layer.add(minimumScale, forKey: "transform.scale")
+        self.layer.add(minimumScale, forKey: nil)
     }
     
     
