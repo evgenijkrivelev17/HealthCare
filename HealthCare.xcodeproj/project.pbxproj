@@ -14,7 +14,8 @@
 		3E21C981233AA2CC0006F8D6 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C980233AA2CC0006F8D6 /* LogInViewModel.swift */; };
 		3E21C983233AA3E00006F8D6 /* LogInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C982233AA3E00006F8D6 /* LogInProtocol.swift */; };
 		3E21C989233B5FD50006F8D6 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C988233B5FD50006F8D6 /* TitleTextField.swift */; };
-		3E21C98D233BF8230006F8D6 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21C98C233BF8230006F8D6 /* LogInService.swift */; };
+		3E3A0B472353D20800CDA95A /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A0B462353D20800CDA95A /* AccountProtocol.swift */; };
+		3E3A0B4D2353D45600CDA95A /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3A0B4C2353D45600CDA95A /* LogInService.swift */; };
 		3E3F2837232FA8BE00C28C68 /* AppRadiusButtonVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */; };
 		3E43023C23290D90008CF157 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43023B23290D90008CF157 /* ViewController.swift */; };
 		3E49F33622C523B8008BD089 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49F33522C523B8008BD089 /* AppDelegate.swift */; };
@@ -36,7 +37,8 @@
 		3E21C980233AA2CC0006F8D6 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		3E21C982233AA3E00006F8D6 /* LogInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInProtocol.swift; sourceTree = "<group>"; };
 		3E21C988233B5FD50006F8D6 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
-		3E21C98C233BF8230006F8D6 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
+		3E3A0B462353D20800CDA95A /* AccountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
+		3E3A0B4C2353D45600CDA95A /* LogInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
 		3E3F2836232FA8BE00C28C68 /* AppRadiusButtonVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRadiusButtonVIew.swift; sourceTree = "<group>"; };
 		3E43023B23290D90008CF157 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E49F33222C523B8008BD089 /* HealthCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				3E21C982233AA3E00006F8D6 /* LogInProtocol.swift */,
+				3E3A0B462353D20800CDA95A /* AccountProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,7 +117,7 @@
 		3E21C98B233BF8080006F8D6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3E21C98C233BF8230006F8D6 /* LogInService.swift */,
+				3E3A0B4C2353D45600CDA95A /* LogInService.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -270,18 +273,19 @@
 				3EFC8A7B232ED5D900364E37 /* HealthCare.xcdatamodeld in Sources */,
 				3E21C983233AA3E00006F8D6 /* LogInProtocol.swift in Sources */,
 				3E43023C23290D90008CF157 /* ViewController.swift in Sources */,
+				3E3A0B4D2353D45600CDA95A /* LogInService.swift in Sources */,
 				3E21C981233AA2CC0006F8D6 /* LogInViewModel.swift in Sources */,
 				3EFC8A78232ED0B500364E37 /* LoginModel.swift in Sources */,
 				3E3F2837232FA8BE00C28C68 /* AppRadiusButtonVIew.swift in Sources */,
 				3E4A7D62233E088A008C9339 /* CAVerticalTextLayer.swift in Sources */,
 				3E0BDABA2328CF08008B423D /* UIButtonExtension.swift in Sources */,
-				3E21C98D233BF8230006F8D6 /* LogInService.swift in Sources */,
 				3E21C989233B5FD50006F8D6 /* TitleTextField.swift in Sources */,
 				3EFC8A7A232ED51F00364E37 /* UIViewControllerExtension.swift in Sources */,
 				3E0BDABC2328D063008B423D /* AppGradientTextView.swift in Sources */,
 				3E49F33622C523B8008BD089 /* AppDelegate.swift in Sources */,
 				3E21C97E233958280006F8D6 /* RegisterAccountController.swift in Sources */,
 				3EF10FC42322369700485443 /* AppLogInPanelView.swift in Sources */,
+				3E3A0B472353D20800CDA95A /* AccountProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -313,22 +313,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2DA5EE35-0401-497E-9823-7B5385575977"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthCare/Controls/TitleTextField.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "SetPlaceHolderSize(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "78D147CA-BF79-49BF-B0FE-BF99E51DA8D1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -336,9 +320,9 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "textFieldShouldReturn(_:)"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "topPositionPlaceholder(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -352,9 +336,9 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "textFieldShouldReturn(_:)"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "topPositionPlaceholder(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -368,8 +352,8 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "lowPositionPaceholder(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -384,9 +368,9 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "chagngedTextField(_:)"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "textFieldShouldReturn(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -400,9 +384,9 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "lowPositionPaceholder(_:)"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "toTopPositionPlaceholder()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -416,9 +400,9 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "SetPlaceHolderText(_:)"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "SetFontText(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -434,8 +418,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -450,8 +434,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -466,8 +450,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -482,8 +466,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -496,10 +480,10 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "chagngedTextField(_:)"
-            landmarkType = "7">
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "TitleTextField"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -512,10 +496,58 @@
             filePath = "HealthCare/Controls/TitleTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "checkValidationField()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACE6446B-4C3A-4334-9447-687212973657"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthCare/Controls/TitleTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "TitleTextField"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "ACE6446B-4C3A-4334-9447-687212973657 - 3ea20141f322dc29"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthCare.TitleTextField.placeHolderFont.modify : __C.UIFont"
+                  moduleName = "HealthCare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenij/HealthCare/HealthCare/Controls/TitleTextField.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "ACE6446B-4C3A-4334-9447-687212973657 - efdc692032ed4038"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthCare.TitleTextField.placeHolderFont.modify : __C.UIFont with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HealthCare"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenij/HealthCare/HealthCare/Controls/TitleTextField.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

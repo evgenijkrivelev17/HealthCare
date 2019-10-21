@@ -11,19 +11,27 @@ import UIKit
 
 public class TitleTextField: UIView, UITextFieldDelegate {
     
-    private var textSize: CGFloat =  20 {
+    public var textSize: CGFloat =  20 {
         didSet {
-            
+            self.textField?.font = UIFont(name: self.textField?.font?.fontName ?? "Avenir", size: textSize)
         }
     }
-    private var placeHolderSize: CGFloat = 15 {
+    
+    public var placeHolderSize: CGFloat = 15 {
         didSet {
-            
+            self.textLabel?.fontSize = self.placeHolderSize
         }
     }
-    private var placeHolderColor: UIColor = .black {
+    
+    public var placeHolderColor: UIColor = .black {
         didSet {
-            
+            self.textLabel?.foregroundColor = self.placeHolderColor.cgColor
+        }
+    }
+    
+    public var placeHolderFont: UIFont = UIFont(name: "Avenir", size: 18)! {
+        didSet {
+            self.textLabel?.font = self.placeHolderFont
         }
     }
     
@@ -33,13 +41,10 @@ public class TitleTextField: UIView, UITextFieldDelegate {
     private var successLineLayer: CAShapeLayer!
     public var currentStateTextField: stateField?
     
-    @objc dynamic var text:String = ""
-    public var errorText:String = "" {
-        didSet {
-            
-        }
-    }
-    public var TIME_ANIMATION:Float = 20.0
+    @objc public dynamic var text: String = ""
+    public var errorText: String = ""
+    
+    public var TIME_ANIMATION: Float = 20.0
     
     private var placeHolderText: String = "" {
         didSet{
@@ -71,8 +76,6 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         
         self.successLineLayer = CAShapeLayer()
         self.textField.layer.addSublayer(successLineLayer)
-        self.SetBackgroundColor()
-        
     }
     
     private func InitializePlaceHolderView() {
@@ -88,6 +91,8 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         self.textField.font = UIFont(name: "Avenir-Black", size: self.textSize)
         self.textField.addTarget(self, action: #selector(chagngedTextField), for: .editingChanged)
         self.textField.addTarget(self, action: #selector(toTopPositionPlaceholder), for: .touchDown)
+        self.textField.addTarget(self, action: #selector(getFocused), for: .editingDidBegin)
+         self.textField.addTarget(self, action: #selector(checkPositionPlaceHolder), for: .editingDidEnd)
         self.textField.delegate = self
     }
     
@@ -112,15 +117,17 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         super.draw(rect)
     }
     
+    @objc private func getFocused() {
+        topPositionPlaceholder(TimeInterval(TIME_ANIMATION))
+    }
     
-    @objc func checkPositionPlaceHolder(_ timeInterval: TimeInterval) {
+    @objc func checkPositionPlaceHolder(_ timeInterval: TimeInterval = 2.0) {
         guard self.textField.text!.count > 0 else {
             self.lowPositionPaceholder(timeInterval)
             return
         }
         self.topPositionPlaceholder(timeInterval)
     }
-    
     
     @objc func toTopPositionPlaceholder() {
         self.topPositionPlaceholder(TimeInterval(self.TIME_ANIMATION))
@@ -223,22 +230,6 @@ public class TitleTextField: UIView, UITextFieldDelegate {
            })
            CATransaction.commit()
        }
-    
-    public func SetBackgroundColor(_ color:UIColor = .clear) {
-        self.textField.backgroundColor = color
-    }
-    
-    public func SetFontPlaceHolder(_ font: UIFont) {
-        self.textLabel.font = font
-    }
-    
-    public func SetPlaceHolderSize(_ size:CGFloat){
-        self.placeHolderSize = size
-    }
-    
-    public func SetColorPlaceHolder(_ color: UIColor) {
-        self.textLabel.foregroundColor = color.cgColor
-    }
     
     public func SetFontText(_ font: UIFont) {
         self.textField.font = font

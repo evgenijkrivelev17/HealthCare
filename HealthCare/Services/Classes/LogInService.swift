@@ -8,3 +8,11 @@
 
 import Foundation
 
+class AccountService {
+    
+    var currentAccount: AccountProtocol?
+    
+    init() {
+        
+    }
+}
