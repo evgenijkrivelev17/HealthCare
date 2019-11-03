@@ -69,8 +69,6 @@ public class RegisterAccountController: UIViewController {
         self.emailField.heightAnchor.constraint(equalToConstant: self.view.bounds.height * 0.09).isActive = true
         self.emailField.SetPlaceHolderText("Email")
         self.emailField.errorText = "Should be email or phone"
-        self.emailField.placeHolderColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.75)
-        self.emailField.textColor = .blue
         self.emailField.ValidationCommand = { text in
             if(text.count > 5) {
                 return true

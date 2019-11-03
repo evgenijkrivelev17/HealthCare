@@ -12,11 +12,19 @@ import UIKit
 
 public class CustomDatePicker : UIView {
     
-    public var dataField : UITextField!
-    public var dataPicker : UIDatePicker!
+    private var dataField : UITextField!
+    private var dataPicker : UIDatePicker!
     private var shapeLineLayer: CAShapeLayer!
-    @objc public var CurrentDate: Date?
-    public var DateForrmater: DateFormatter?
+    @objc public var currentDate: Date?
+    public var dateFormmater: DateFormatter?
+    
+    
+    public var textColor: UIColor = .white {
+        didSet{
+            self.dataField?.textColor = self.textColor
+            self.dataField?.placeHolderColor = self.textColor
+        }
+    }
     
      override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,6 +67,9 @@ public class CustomDatePicker : UIView {
         self.dataField.placeholder = "Birthday"
         self.dataField.font = UIFont(name: "Avenir-Black", size: 20)
         self.dataField.inputView = self.dataPicker
+        self.dataField.textColor = self.textColor
+        self.dataField.placeHolderColor = self.textColor
+        self.dataField.isSelected = false
     }
     
     private func SetUpDataPicker() {
@@ -101,7 +112,7 @@ public class CustomDatePicker : UIView {
     }
     
     private func getCurrentTime(){
-        self.CurrentDate = self.dataPicker.date
+        self.currentDate = self.dataPicker.date
         self.updateTimeLabel()
     }
     
@@ -114,7 +125,7 @@ public class CustomDatePicker : UIView {
     }
     
     @objc func timeChanged(datePicker: UIDatePicker) {
-        self.CurrentDate = datePicker.date
+        self.currentDate = datePicker.date
         self.updateTimeLabel()
     }
     
@@ -124,13 +135,13 @@ public class CustomDatePicker : UIView {
     
     private func getDateString() -> String {
         var dateString = ""
-        if let formmater = self.DateForrmater {
-            dateString = formmater.string(from: self.CurrentDate!)
+        if let formmater = self.dateFormmater {
+            dateString = formmater.string(from: self.currentDate!)
         }
         else {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd MMMM yyyy"
-            dateString = formatter.string(from: self.CurrentDate!)
+            dateString = formatter.string(from: self.currentDate!)
         }
         return dateString
     }

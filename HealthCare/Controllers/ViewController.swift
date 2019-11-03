@@ -74,12 +74,14 @@ class ViewController: UIViewController {
         self.logInPanelView.logInField.layer.borderWidth = 2
         self.logInPanelView.logInField.layer.borderColor = UIColor.white.cgColor
         self.logInPanelView.logInField.addTarget(self, action: #selector(chagngedLogInField), for: .editingChanged)
+        self.logInPanelView.logInField.contentScaleFactor = UIScreen.main.scale
         
         self.logInPanelView.passwordField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.logInPanelView.passwordField.placeholder = "Enter password"
         self.logInPanelView.passwordField.textColor = .white
         self.logInPanelView.passwordField.layer.borderColor = UIColor.white.cgColor
         self.logInPanelView.passwordField.layer.borderWidth = 2
+        self.logInPanelView.passwordField.contentScaleFactor = UIScreen.main.scale
         self.logInPanelView.passwordField.addTarget(self, action: #selector(chagngedPasswordField), for: .editingChanged)
         
         self.logInPanelView.sigInButton.setTitle("Sign In", for: .normal)

@@ -13,13 +13,14 @@ public class TitleTextField: UIView, UITextFieldDelegate {
     
     public var textSize: CGFloat =  20 {
         didSet {
-            self.textField?.font = UIFont(name: self.textField?.font?.fontName ?? "Avenir", size: textSize)
+            self.textField?.font = UIFont(name: self.textField?.font?.fontName ?? AppConstans.APP_DEFAULT_FONT_TYPE, size: textSize)
         }
     }
     
     public var textColor: UIColor  = .white {
         didSet {
             self.textLabel?.foregroundColor = textColor.cgColor
+            self.textField?.textColor = textColor
         }
     }
     
@@ -38,7 +39,7 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         }
     }
     
-    public var placeHolderFont: UIFont = UIFont(name: "Avenir", size: 18)! {
+    public var placeHolderFont: UIFont = UIFont(name: AppConstans.APP_DEFAULT_FONT_TYPE, size: 18)! {
         didSet {
             self.textLabel?.font = self.placeHolderFont
         }
@@ -100,7 +101,8 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         self.textField.addTarget(self, action: #selector(chagngedTextField), for: .editingChanged)
         self.textField.addTarget(self, action: #selector(toTopPositionPlaceholder), for: .touchDown)
         self.textField.addTarget(self, action: #selector(getFocused), for: .editingDidBegin)
-         self.textField.addTarget(self, action: #selector(checkPositionPlaceHolder), for: .editingDidEnd)
+        self.textField.addTarget(self, action: #selector(checkPositionPlaceHolder), for: .editingDidEnd)
+        self.textField.textColor = self.textColor
         self.textField.delegate = self
     }
     
