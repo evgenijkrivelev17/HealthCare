@@ -17,6 +17,15 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         }
     }
     
+    public var textColor: UIColor  = .white {
+        didSet {
+            self.textLabel?.foregroundColor = textColor.cgColor
+        }
+    }
+    
+    public var succesColor: UIColor = .green
+    public var errorColor: UIColor = .red
+    
     public var placeHolderSize: CGFloat = 15 {
         didSet {
             self.textLabel?.fontSize = self.placeHolderSize
@@ -35,7 +44,7 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         }
     }
     
-    private var textLabel:CATextLayer!
+    public var textLabel:CATextLayer!
     private var textField:UITextField!
     private var shapeLineLayer: CAShapeLayer!
     private var successLineLayer: CAShapeLayer!
@@ -44,7 +53,7 @@ public class TitleTextField: UIView, UITextFieldDelegate {
     @objc public dynamic var text: String = ""
     public var errorText: String = ""
     
-    public var TIME_ANIMATION: Float = 20.0
+    public var TIME_ANIMATION: Float = 2
     
     private var placeHolderText: String = "" {
         didSet{
@@ -79,7 +88,6 @@ public class TitleTextField: UIView, UITextFieldDelegate {
     }
     
     private func InitializePlaceHolderView() {
-        self.textLabel.foregroundColor = UIColor.lightGray.cgColor
         self.textLabel.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height * 0.3)
         self.textLabel.font = UIFont(name: "Avenir-Black", size: self.placeHolderSize)
         self.textLabel.fontSize = self.placeHolderSize
@@ -167,26 +175,25 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         if tempState != self.currentStateTextField {
             self.currentStateTextField = tempState
             if result {
-                self.updateValidView(UIColor.green)
+                self.updateValidView()
             }
             else {
-               self.updateNonValidView(UIColor.red)
+               self.updateNonValidView()
             }
         }
     }
     
-    private func updateValidView(_ newColor:UIColor) {
+    private func updateValidView() {
         CATransaction.begin()
             let faildGroupAnimation = CAAnimationGroup()
-            faildGroupAnimation.duration = 0.5
+            faildGroupAnimation.duration = CFTimeInterval(self.TIME_ANIMATION)
             faildGroupAnimation.repeatCount = 0
             
             let shapeLineColorAnimation = CABasicAnimation(keyPath: "strokeColor")
             shapeLineColorAnimation.fromValue = self.shapeLineLayer.strokeColor
-            shapeLineColorAnimation.toValue = newColor.cgColor
+            shapeLineColorAnimation.toValue = self.succesColor.cgColor
         
             let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
-            strokeAnimation.duration = 0.5
             strokeAnimation.fromValue = 0
             strokeAnimation.toValue = 1
             
@@ -195,26 +202,25 @@ public class TitleTextField: UIView, UITextFieldDelegate {
         
         CATransaction.setCompletionBlock({
             self.successLineLayer.strokeEnd = 1
-            self.successLineLayer.strokeColor = newColor.cgColor
+            self.successLineLayer.strokeColor = self.succesColor.cgColor
             
-            self.textLabel.foregroundColor = self.placeHolderColor.cgColor
+            self.textLabel.foregroundColor = self.textColor.cgColor
             self.textLabel.string = self.placeHolderText
         })
         CATransaction.commit()
     }
     
-    private func updateNonValidView(_ newColor:UIColor) {
+    private func updateNonValidView() {
            CATransaction.begin()
                let faildGroupAnimation = CAAnimationGroup()
-               faildGroupAnimation.duration = 0.5
+               faildGroupAnimation.duration = CFTimeInterval(self.TIME_ANIMATION)
                faildGroupAnimation.repeatCount = 0
                
                let shapeLineColorAnimation = CABasicAnimation(keyPath: "strokeColor")
                shapeLineColorAnimation.fromValue = self.shapeLineLayer.strokeColor
-               shapeLineColorAnimation.toValue = newColor.cgColor
+               shapeLineColorAnimation.toValue = self.errorColor.cgColor
            
                let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
-               strokeAnimation.duration = 0.5
                strokeAnimation.fromValue = 0
                strokeAnimation.toValue = 1
                
@@ -223,9 +229,9 @@ public class TitleTextField: UIView, UITextFieldDelegate {
            
            CATransaction.setCompletionBlock({
                self.successLineLayer.strokeEnd = 1
-               self.successLineLayer.strokeColor = newColor.cgColor
+               self.successLineLayer.strokeColor = self.errorColor.cgColor
                
-               self.textLabel.foregroundColor = UIColor.red.cgColor
+               self.textLabel.foregroundColor = self.errorColor.cgColor
                self.textLabel.string = self.errorText
            })
            CATransaction.commit()

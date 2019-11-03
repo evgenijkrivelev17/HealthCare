@@ -49,6 +49,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "RegisterAccountController.SetDateBirthDay():RegisterAccountController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TitleTextField.InitializeLineLayer():TitleTextField.swift">
          <PersistentStrings>
             <PersistentString

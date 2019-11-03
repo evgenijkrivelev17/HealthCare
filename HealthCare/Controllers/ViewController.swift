@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         self.setUpFileds()
         self.setObservation()
-        
+        self.setUpView()
     }
     
     func setObservation(){
@@ -48,6 +48,10 @@ class ViewController: UIViewController {
         self.createLoginPanelView()
     }
     
+    func setUpView(){
+        self.view.backgroundColor = AppConstans.APP_DEFAULT_VIEW_BACKGROUND_COLOR
+    }
+    
     func createLoginPanelView(){
         
         self.logInPanelView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,27 +62,33 @@ class ViewController: UIViewController {
         
         self.logInPanelView.logInButton.setTitle("Log In", for: .normal)
         self.logInPanelView.logInButton.titleLabel?.font = UIFont(name: "Palatino-Bold", size: 30)
-        self.logInPanelView.logInButton.backgroundColor = UIColor.black
         self.logInPanelView.logInButton.setTitleColor(UIColor.white, for: .normal)
+        self.logInPanelView.logInButton.layer.backgroundColor = AppConstans.APP_DEFAULT_SUCCESS_BUTTON_COLOR.cgColor
+        self.logInPanelView.logInButton.layer.masksToBounds = true
+        self.logInPanelView.logInButton.layer.cornerRadius = 5
+        
 
-        self.logInPanelView.logInField.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.logInPanelView.logInField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.logInPanelView.logInField.placeholder = "User name or email"
-        self.logInPanelView.logInField.textColor = UIColor.black
+        self.logInPanelView.logInField.textColor = .white
         self.logInPanelView.logInField.layer.borderWidth = 2
+        self.logInPanelView.logInField.layer.borderColor = UIColor.white.cgColor
         self.logInPanelView.logInField.addTarget(self, action: #selector(chagngedLogInField), for: .editingChanged)
         
-        self.logInPanelView.passwordField.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         self.logInPanelView.passwordField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.logInPanelView.passwordField.placeholder = "Enter password"
+        self.logInPanelView.passwordField.textColor = .white
+        self.logInPanelView.passwordField.layer.borderColor = UIColor.white.cgColor
         self.logInPanelView.passwordField.layer.borderWidth = 2
         self.logInPanelView.passwordField.addTarget(self, action: #selector(chagngedPasswordField), for: .editingChanged)
         
         self.logInPanelView.sigInButton.setTitle("Sign In", for: .normal)
         self.logInPanelView.sigInButton.titleLabel?.font = UIFont(name: "Palatino-Bold", size: 30)
-        self.logInPanelView.sigInButton.backgroundColor = UIColor.black
         self.logInPanelView.sigInButton.setTitleColor(UIColor.white, for: .normal)
         self.logInPanelView.sigInButton.addTarget(self, action: #selector(CreateAccount), for: .touchDown)
+        self.logInPanelView.sigInButton.layer.backgroundColor = AppConstans.APP_DEFAULT_SUCCESS_BUTTON_COLOR.cgColor
+        self.logInPanelView.sigInButton.layer.masksToBounds = true
+        self.logInPanelView.sigInButton.layer.cornerRadius = 5
     }
    
     func createTitleView() {

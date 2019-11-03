@@ -12,7 +12,7 @@ import UIKit
 public class AppRadiusButtonView: UIButton {
     
     private var isSetCornerRadius: Bool = false
-    private var cornerRounded: CGFloat = 0 {
+    public var cornerRounded: CGFloat = 0 {
         didSet {
             UpdateCorners(value: cornerRounded)
         }
